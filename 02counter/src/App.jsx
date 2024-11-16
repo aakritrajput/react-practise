@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import './App.css'
 
-function App() {
+function App() {  
 
   let [counter, setCounter] = useState(15)
 
@@ -10,7 +10,11 @@ function App() {
 
   const addValue = () => { 
     counter=counter+1 ;
-    setCounter(counter)
+    setCounter(prevCounter=>prevCounter+1)     // what will happen ? result?
+    setCounter(prevCounter=>prevCounter+1)     //its the story of useState(15) ..it send all the updates to ui and variables in batches (fibre(diffing algorithm) concept which give more control over batches)
+    setCounter(prevCounter=>prevCounter+1)     //so setCounter is a function and it recieve a callback which is its previous state (not talking about UI) and then can apply the required condition ... as given
+    setCounter(prevCounter=>prevCounter+1)
+    setCounter(prevCounter=>prevCounter+1)
     //console.log("working",Math.random());
   }
 
