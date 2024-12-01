@@ -33,7 +33,7 @@ function App() {
                     </div>
 
                     <div className="w-full max-w-sm mx-auto">
-                       <Card/>
+                        <Card/>
                     </div>
                 </div>
             </div>
